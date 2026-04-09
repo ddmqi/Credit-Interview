@@ -313,153 +313,86 @@ canvas{max-width:100%;display:block}
 .ito-step-body strong{color:var(--t1)}
 
 
-/* ══ MOBILE RESPONSIVE ══════════════════════════════════════════ */
-#mob-menu-btn {
-  display:none;position:fixed;top:10px;right:12px;z-index:1000;
-  background:var(--acc);border:none;border-radius:8px;
-  width:44px;height:44px;cursor:pointer;font-size:22px;color:#000;
-  align-items:center;justify-content:center;
-  box-shadow:0 2px 12px rgba(0,212,170,.4);
-}
-#mob-drawer {
-  display:none;position:fixed;inset:0;z-index:998;background:rgba(0,0,0,.75);
-}
-#mob-drawer.open{display:block;}
-#mob-drawer-inner {
-  position:absolute;top:0;left:0;bottom:0;width:75%;max-width:300px;
-  background:#0d0f14;border-right:1px solid var(--bd);
-  overflow-y:auto;padding:0 0 40px;
-}
-#mob-drawer-logo {
-  padding:16px 18px 12px;border-bottom:1px solid var(--bd);
-  font-family:var(--mono);font-size:13px;font-weight:600;
-  color:var(--acc);display:flex;align-items:center;gap:8px;
-}
-#mob-drawer-close {
-  display:flex;align-items:center;gap:8px;width:100%;padding:12px 18px;
-  background:none;border:none;border-bottom:1px solid var(--bd);
-  color:var(--t3);cursor:pointer;font-family:var(--sans);font-size:13px;
-}
-.mob-nav-section {
-  padding:10px 18px 4px;font-family:var(--mono);font-size:9px;
-  color:var(--t3);letter-spacing:.15em;text-transform:uppercase;
-}
-#mob-drawer-inner .mob-nav-btn {
-  display:block;width:100%;text-align:left;padding:11px 18px 11px 22px;
+/* ══ MOBILE ════════════════════════════════════════════════════ */
+#mob-btn{display:none;position:fixed;top:10px;right:12px;z-index:1000;
+  background:var(--acc);border:none;border-radius:9px;width:44px;height:44px;
+  cursor:pointer;font-size:22px;color:#000;align-items:center;justify-content:center;
+  box-shadow:0 2px 12px rgba(0,212,170,.4);}
+#mob-overlay{display:none;position:fixed;inset:0;z-index:998;background:rgba(0,0,0,.7);}
+#mob-overlay.open{display:block;}
+#mob-panel{position:absolute;top:0;left:0;bottom:0;width:78%;max-width:290px;
+  background:#0d0f14;border-right:1px solid var(--bd);overflow-y:auto;padding-bottom:40px;}
+#mob-logo{padding:15px 18px 12px;border-bottom:1px solid var(--bd);
+  font-family:var(--mono);font-size:13px;font-weight:600;color:var(--acc);}
+#mob-close{display:block;width:100%;padding:11px 18px;background:none;border:none;
+  border-bottom:1px solid var(--bd);color:var(--t3);cursor:pointer;
+  font-family:var(--sans);font-size:13px;text-align:left;}
+.mob-sec{padding:9px 18px 3px;font-family:var(--mono);font-size:9px;
+  color:var(--t3);letter-spacing:.15em;text-transform:uppercase;}
+.mob-item{display:block;width:100%;text-align:left;padding:10px 18px 10px 22px;
   background:none;border:none;border-left:3px solid transparent;
-  color:var(--t2);cursor:pointer;font-family:var(--sans);font-size:13px;
-  transition:all .15s;
-}
-#mob-drawer-inner .mob-nav-btn:hover,
-#mob-drawer-inner .mob-nav-btn.active {
-  background:rgba(0,212,170,.08);color:var(--acc);border-left-color:var(--acc);
-}
-
+  color:var(--t2);cursor:pointer;font-family:var(--sans);font-size:13px;transition:all .15s;}
+.mob-item:hover,.mob-item.active{background:rgba(0,212,170,.08);color:var(--acc);border-left-color:var(--acc);}
 @media(max-width:768px){
-  #mob-menu-btn{display:flex!important;}
+  #mob-btn{display:flex!important;}
   #nav{display:none!important;}
-  .wrap{padding:0 14px!important;padding-top:64px!important;padding-bottom:48px!important;}
-  .ph-title{font-size:22px!important;line-height:1.2!important;}
-  .ph-sub{font-size:13px!important;}
-  .ph{padding:14px 0 12px!important;}
-  /* All 2-4 col grids → 1 col */
+  .wrap{padding:0 14px!important;padding-top:66px!important;padding-bottom:48px!important;}
+  .ph-title{font-size:20px!important;}.ph-sub{font-size:13px!important;}
   .col2,.g2,.g3,.grid{grid-template-columns:1fr!important;}
   .kpi-row{grid-template-columns:1fr 1fr!important;}
-  /* Inline style grids */
-  [style*="1fr 1fr"]{grid-template-columns:1fr!important;}
-  [style*="repeat(2"]{grid-template-columns:1fr!important;}
-  [style*="repeat(3"]{grid-template-columns:1fr!important;}
-  [style*="repeat(4"]{grid-template-columns:1fr 1fr!important;}
-  [style*="320px"]{grid-template-columns:1fr!important;}
-  [style*="280px"]{grid-template-columns:1fr!important;}
-  /* Tabs */
+  [style*="1fr 1fr"],[style*="repeat(2"],[style*="repeat(3"],[style*="repeat(4"],[style*="320px"],[style*="280px"]{grid-template-columns:1fr!important;}
   .tab2-bar,.tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;flex-wrap:nowrap!important;padding-bottom:4px;}
   .tab2-btn,.tab{white-space:nowrap;font-size:11px!important;padding:5px 10px!important;flex-shrink:0;}
-  /* Formulas */
-  .formula,.fblock{overflow-x:auto;font-size:12px!important;-webkit-overflow-scrolling:touch;}
-  /* Tables */
-  .dtable,.dt{font-size:11px!important;}
-  .dtable td,.dtable th{padding:6px 8px!important;}
-  /* PNL table condensed */
+  .formula,.fblock{overflow-x:auto;font-size:12px!important;}
+  .dtable{font-size:11px!important;}
   .pnl-row{grid-template-columns:1.5fr .8fr!important;font-size:11px!important;}
   .pnl-row>div:nth-child(3),.pnl-row>div:nth-child(4){display:none;}
-  /* Cards */
-  .card{padding:14px!important;margin-bottom:10px!important;}
-  .concept-card{padding:14px!important;}
-  .desc,.cc-body,.acc-inner p,.stxt{font-size:12px!important;}
-  /* Flashcards */
+  .card{padding:14px!important;}.desc{font-size:12px!important;}
   .fc-card{min-height:180px!important;padding:18px!important;}
-  .fc-q,.fc2-q{font-size:14px!important;}
-  .fc2-face{padding:18px!important;}
-  .fc2-inner{min-height:200px!important;}
-  /* Accordions */
-  .acc-q{font-size:12px!important;}
-  /* SVG container */
-  .svg-wrap,.diagram-wrap,.actors{overflow-x:auto;-webkit-overflow-scrolling:touch;}
-  .diagram-svg,.diagram-svg svg{min-width:400px;}
-  /* Canvas full width */
-  canvas{width:100%!important;}
-  /* Panels */
-  .panel{padding:14px!important;}
-  /* Section headers */
-  .sh2-title,.sh-title{font-size:15px!important;}
-  .stitle,.ptitle{font-size:10px!important;}
-  /* Info boxes */
-  .ib,.box{font-size:12px!important;padding:10px 12px!important;}
-  /* KV font */
-  .kv{font-size:18px!important;}
-  /* Actor boxes */
-  .actor{min-width:90px!important;padding:10px 12px!important;}
-  /* Prevent overflow */
-  body,#main{overflow-x:hidden;}
-  /* Pricer wrap */
-  .pricer-wrap,.arrowline{grid-template-columns:1fr!important;flex-direction:column!important;}
+  .fc-q,.fc2-q{font-size:14px!important;}.fc2-face{padding:18px!important;}
+  canvas{width:100%!important;}.panel{padding:14px!important;}
+  .sh2-title{font-size:14px!important;}.ib,.box{font-size:12px!important;}
+  body{overflow-x:hidden;}
 }
 @media(max-width:380px){
-  .ph-title{font-size:18px!important;}
-  .tab2-btn,.tab{font-size:10px!important;padding:4px 8px!important;}
+  .ph-title{font-size:17px!important;}
+  .tab2-btn{font-size:10px!important;padding:4px 8px!important;}
 }
 
 </style>
 </head>
 <body>
-
-<!-- ══ Mobile Menu Button ══ -->
-<button id="mob-menu-btn" onclick="mobToggle()" aria-label="Menu">☰</button>
-
-<!-- ══ Mobile Drawer ══ -->
-<div id="mob-drawer" onclick="mobDrawerClick(event)">
-  <div id="mob-drawer-inner">
-    <div id="mob-drawer-logo">⚡ Credit Structuring</div>
-    <button id="mob-drawer-close" onclick="mobClose()">✕&nbsp; Fermer</button>
-    <div class="mob-nav-section">Fondamentaux</div>
-    <button class="mob-nav-btn" onclick="goMob('eq')">① Équations & Formules</button>
-    <button class="mob-nav-btn" onclick="goMob('cds')">② CDS — Mécanisme & Pricer</button>
-    <button class="mob-nav-btn" onclick="goMob('cln')">③ CLN — Structure & Hedge</button>
-    <button class="mob-nav-btn" onclick="goMob('corr')">④ Corrélation (original)</button>
-    <button class="mob-nav-btn" onclick="goMob('fc')">⑤ Flashcards (original)</button>
-    <button class="mob-nav-btn" onclick="goMob('qe')">⑥ Éditeur Q&amp;R</button>
-    <button class="mob-nav-btn" onclick="goMob('cases')">⑦ Cas Pratiques</button>
-    <button class="mob-nav-btn" onclick="goMob('adv')">⑧ Marchés &amp; Modèles</button>
-    <button class="mob-nav-btn" onclick="goMob('isda')">⑨ ISDA Process</button>
-    <div class="mob-nav-section">Produits Multi-Noms</div>
-    <button class="mob-nav-btn" onclick="goMob('cdo')">⑩ CDO &amp; Tranches</button>
-    <button class="mob-nav-btn" onclick="goMob('ftd')">⑪ FTD &amp; iTraxx</button>
-    <div class="mob-nav-section">Pratique Trading</div>
-    <button class="mob-nav-btn" onclick="goMob('pnl2')">⑫ P&amp;L &amp; XVA</button>
-    <button class="mob-nav-btn" onclick="goMob('sensi2')">⑬ Sensibilités &amp; Greeks</button>
-    <div class="mob-nav-section">Mathématiques</div>
-    <button class="mob-nav-btn" onclick="goMob('mc')">⑭ Monte Carlo &amp; Itô</button>
-    <button class="mob-nav-btn" onclick="goMob('quant')">⑰ Mesures &amp; Girsanov</button>
-    <div class="mob-nav-section">Révision</div>
-    <button class="mob-nav-btn" onclick="goMob('fc2')">⑮ Flashcards Expert</button>
-    <div class="mob-nav-section">Avancé</div>
-    <button class="mob-nav-btn" onclick="goMob('advcredit')">⑯ Crédit Avancé</button>
-    <button class="mob-nav-btn" onclick="goMob('struct')">⑱ Produits Structurés</button>
-    <button class="mob-nav-btn" onclick="goMob('market')">⑲ Pratique de Marché</button>
+<button id="mob-btn" onclick="mobToggle()" aria-label="Menu">☰</button>
+<div id="mob-overlay" onclick="mobBg(event)">
+  <div id="mob-panel">
+    <div id="mob-logo">⚡ Credit Structuring</div>
+    <button id="mob-close" onclick="mobClose()">✕ Fermer</button>
+    <div class="mob-sec">Fondamentaux</div>
+    <button class="mob-item" onclick="goM('eq')">① Équations</button>
+    <button class="mob-item" onclick="goM('cds')">② CDS Pricer</button>
+    <button class="mob-item" onclick="goM('cln')">③ CLN</button>
+    <button class="mob-item" onclick="goM('corr')">④ Corrélation</button>
+    <button class="mob-item" onclick="goM('fc')">⑤ Flashcards</button>
+    <button class="mob-item" onclick="goM('qe')">⑥ Éditeur Q&amp;R</button>
+    <button class="mob-item" onclick="goM('cases')">⑦ Cas Pratiques</button>
+    <button class="mob-item" onclick="goM('adv')">⑧ Marchés &amp; Modèles</button>
+    <button class="mob-item" onclick="goM('isda')">⑨ ISDA</button>
+    <div class="mob-sec">Multi-Noms &amp; Trading</div>
+    <button class="mob-item" onclick="goM('cdo')">⑩ CDO &amp; Tranches</button>
+    <button class="mob-item" onclick="goM('ftd')">⑪ FTD &amp; iTraxx</button>
+    <button class="mob-item" onclick="goM('pnl2')">⑫ P&amp;L &amp; XVA</button>
+    <button class="mob-item" onclick="goM('sensi2')">⑬ Sensibilités</button>
+    <div class="mob-sec">Mathématiques</div>
+    <button class="mob-item" onclick="goM('mc')">⑭ Monte Carlo &amp; Itô</button>
+    <button class="mob-item" onclick="goM('quant')">⑰ Mesures &amp; Girsanov</button>
+    <div class="mob-sec">Révision &amp; Avancé</div>
+    <button class="mob-item" onclick="goM('fc2')">⑮ Flashcards Expert</button>
+    <button class="mob-item" onclick="goM('advcredit')">⑯ Crédit Avancé</button>
+    <button class="mob-item" onclick="goM('struct')">⑱ Produits Structurés</button>
+    <button class="mob-item" onclick="goM('market')">⑲ Pratique de Marché</button>
+    <button class="mob-item" onclick="goM('carry')">⑳ Carry &amp; Concepts</button>
   </div>
 </div>
-
 <nav id="nav">
 <div class="nav-logo">CS·PREP</div>
 <button class="nav-btn active" onclick="go('eq',this)">① Équations</button>
@@ -480,6 +413,7 @@ canvas{max-width:100%;display:block}
 <button class="nav-btn" onclick="go('quant',this)">&#x24B0; Mesures &amp; Girsanov</button>
 <button class="nav-btn" onclick="go('struct',this)">&#x24B1; Produits Structur&eacute;s</button>
 <button class="nav-btn" onclick="go('market',this)">&#x24B2; Pratique de March&eacute;</button>
+<button class="nav-btn" onclick="go('carry',this)">&#x24B3; Carry &amp; Concepts</button>
 </nav>
 <!-- ================================================ PAGE 1: EQUATIONS -->
 <div class="page active" id="pg-eq">
@@ -1213,7 +1147,7 @@ Défaut de i si : Zᵢ &lt; Φ⁻¹(PDᵢ)</div><p>M = facteur systémique commu
   <button class="tab2-btn active" onclick="tab2('cdo','str',this)">Structure & Cascade</button>
   <button class="tab2-btn" onclick="tab2('cdo','correl',this)">Tranches & ρ</button>
   <button class="tab2-btn" onclick="tab2('cdo','basecorr',this)">Base Correlation</button>
-  <button class="tab2-btn" onclick="tab2('cdo','sim',this)">Simulateur ρ</button>
+  <button class="tab2-btn" onclick="tab2('cdo','sim',this);setTimeout(updateCDO,80)">Simulateur ρ</button>
   <button class="tab2-btn" onclick="tab2('cdo','qa',this)">Questions Entretien</button>
 </div>
 
@@ -1753,10 +1687,10 @@ Défaut de i si : Zᵢ &lt; Φ⁻¹(PDᵢ)</div><p>M = facteur systémique commu
   <div class="ph-sub">Les fondements mathématiques du pricing des dérivés. Mouvement Brownien géométrique, Lemme d'Itô, simulation Monte Carlo appliquée aux CDS et à la distribution des pertes crédit.</div>
 </div>
 <div class="tab2-bar">
-  <button class="tab2-btn active" onclick="tab2('mc','bm',this)">Mouvement Brownien</button>
+  <button class="tab2-btn active" onclick="tab2('mc','bm',this);setTimeout(updateBM,80)">Mouvement Brownien</button>
   <button class="tab2-btn" onclick="tab2('mc','ito',this)">Lemme d'Itô</button>
-  <button class="tab2-btn" onclick="tab2('mc','mc',this)">Monte Carlo — Démo</button>
-  <button class="tab2-btn" onclick="tab2('mc','poisson',this)">Processus de Poisson</button>
+  <button class="tab2-btn" onclick="tab2('mc','mc',this);setTimeout(updateMC,80)">Monte Carlo — Démo</button>
+  <button class="tab2-btn" onclick="tab2('mc','poisson',this);setTimeout(updatePoisson,80)">Processus de Poisson</button>
   <button class="tab2-btn" onclick="tab2('mc','qa',this)">Questions Entretien</button>
 </div>
 
@@ -2757,16 +2691,17 @@ function ncdf(x) {
 }
 
 function drawCanvas(canvas, fn) {
-  var W = canvas.offsetWidth || 600, H = canvas.height || 200;
+  var W = 0, node = canvas;
+  while (node && W < 50) { W = node.offsetWidth || node.clientWidth || 0; node = node.parentElement; }
+  if (W < 50) W = Math.min(window.innerWidth - 30, 600);
+  var H = parseInt(canvas.getAttribute('height')) || 200;
   var dpr = window.devicePixelRatio || 1;
   canvas.width = W * dpr; canvas.height = H * dpr;
   canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
   var ctx = canvas.getContext('2d');
   ctx.scale(dpr, dpr);
-  ctx.fillStyle = '#0a0c10';
-  ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = '#0a0c10'; ctx.fillRect(0, 0, W, H);
   fn(ctx, W, H);
-  return ctx;
 }
 
 function drawHistogram(ctx, W, H, hist, bins, maxLoss, labels) {
@@ -2816,165 +2751,247 @@ function statsFromLosses(losses) {
 }
 
 // ── CDO Simulator ─────────────────────────────────────────────────
+// CDO Simulator — debounced + robust canvas width
+var _cdoTimer = null;
 function updateCDO() {
-  var rhoEl=document.getElementById('cdo-rho'), pdEl=document.getElementById('cdo-pd');
-  if (!rhoEl||!pdEl) return;
-  var rho=+rhoEl.value/100, pd=+pdEl.value/100;
-  document.getElementById('cdo-rho-v').textContent = (rho*100).toFixed(0)+'%';
-  document.getElementById('cdo-pd-v').textContent = (pd*100).toFixed(1)+'%';
-  var canvas = document.getElementById('cdo-canvas');
-  if (!canvas) return;
-  var losses = runMCCDO(rho, pd, 3000);
-  var st = statsFromLosses(losses);
-  document.getElementById('cdo-mean').textContent = (st.mean*100).toFixed(1)+'%';
-  document.getElementById('cdo-var95').textContent = (st.v95*100).toFixed(1)+'%';
-  document.getElementById('cdo-var99').textContent = (st.v99*100).toFixed(1)+'%';
-  document.getElementById('cdo-pzero').textContent = (st.pz*100).toFixed(0)+'%';
-  var bins=30, maxL=0.6, hist=new Array(bins).fill(0);
-  losses.forEach(function(l){var idx=Math.min(Math.floor(l/maxL*bins),bins-1);hist[idx]++;});
-  drawCanvas(canvas, function(ctx,W,H){drawHistogram(ctx,W,H,hist,bins,maxL);});
-  // Live tranche display
-  var live = document.getElementById('cdo-tranches-live');
-  if (!live) return;
-  var N=losses.length;
-  var eqLoss = losses.filter(function(l){return l>0.03;}).length/N;
-  var senLoss = losses.filter(function(l){return l>0.12;}).length/N;
-  var ssLoss = losses.filter(function(l){return l>0.22;}).length/N;
-  live.innerHTML = [
-    {label:'Super Senior [22-100%]',pct:ssLoss,col:'#4f9cff'},
-    {label:'Senior [12-22%]',pct:senLoss,col:'#00d4aa'},
-    {label:'Mezzanine [3-12%]',pct:(losses.filter(function(l){return l>0.03&&l<=0.12;}).length/N),col:'#a87fff'},
-    {label:'Equity [0-3%]',pct:eqLoss,col:'#ff6b6b'}
-  ].map(function(t){
-    return '<div style="margin-bottom:4px;font-size:12px"><span style="color:'+t.col+';font-family:monospace">'+t.label+'</span> — <strong style="color:'+t.col+'">P(touché) = '+(t.pct*100).toFixed(1)+'%</strong></div>';
-  }).join('');
+  var rhoEl = document.getElementById('cdo-rho');
+  var pdEl  = document.getElementById('cdo-pd');
+  if (!rhoEl || !pdEl) return;
+  var rho = +rhoEl.value / 100, pd = +pdEl.value / 100;
+  var el;
+  el = document.getElementById('cdo-rho-v'); if (el) el.textContent = Math.round(rho*100)+'%';
+  el = document.getElementById('cdo-pd-v');  if (el) el.textContent = (pd*100).toFixed(1)+'%';
+  clearTimeout(_cdoTimer);
+  _cdoTimer = setTimeout(function() {
+    var canvas = document.getElementById('cdo-canvas');
+    if (!canvas) return;
+    // Get a real width by walking up visible parents
+    var W = 0, node = canvas;
+    while (node && W < 50) { W = node.offsetWidth || node.clientWidth || 0; node = node.parentElement; }
+    if (W < 50) W = Math.min(window.innerWidth - 30, 600);
+    var H = 200, dpr = window.devicePixelRatio || 1;
+    canvas.width  = W * dpr; canvas.height = H * dpr;
+    canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+    ctx.fillStyle = '#0a0c10'; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = '#545f75'; ctx.font = '12px sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText('Simulation...', W/2, H/2);
+    setTimeout(function() {
+      var nSim = window.innerWidth < 600 ? 1200 : 2000;
+      var losses = runMCCDO(rho, pd, nSim);
+      var st = statsFromLosses(losses);
+      el = document.getElementById('cdo-mean');  if(el) el.textContent = (st.mean*100).toFixed(1)+'%';
+      el = document.getElementById('cdo-var95'); if(el) el.textContent = (st.v95*100).toFixed(1)+'%';
+      el = document.getElementById('cdo-var99'); if(el) el.textContent = (st.v99*100).toFixed(1)+'%';
+      el = document.getElementById('cdo-pzero'); if(el) el.textContent = (st.pz*100).toFixed(0)+'%';
+      var bins = 30, maxL = 0.6, hist = new Array(bins).fill(0);
+      losses.forEach(function(l){ hist[Math.min(Math.floor(l/maxL*bins), bins-1)]++; });
+      // Re-measure width after DOM may have reflowed
+      var W2 = 0, node2 = canvas;
+      while (node2 && W2 < 50) { W2 = node2.offsetWidth || node2.clientWidth || 0; node2 = node2.parentElement; }
+      if (W2 < 50) W2 = W;
+      canvas.width  = W2 * dpr; canvas.height = H * dpr;
+      canvas.style.width = W2 + 'px'; canvas.style.height = H + 'px';
+      var ctx2 = canvas.getContext('2d'); ctx2.scale(dpr, dpr);
+      ctx2.fillStyle = '#0a0c10'; ctx2.fillRect(0, 0, W2, H);
+      var pad = {l:36,r:12,t:14,b:26}, cw = W2-pad.l-pad.r, ch = H-pad.t-pad.b;
+      var maxH = Math.max.apply(null, hist); if (!maxH) return;
+      var bw = cw / bins;
+      // Grid
+      ctx2.strokeStyle = '#1e2230'; ctx2.lineWidth = 1;
+      for (var g = 0; g <= 4; g++) {
+        var gy = pad.t + g*ch/4;
+        ctx2.beginPath(); ctx2.moveTo(pad.l, gy); ctx2.lineTo(pad.l+cw, gy); ctx2.stroke();
+      }
+      // Bars
+      hist.forEach(function(h, i) {
+        if (!h) return;
+        var x = pad.l + i*bw, bh = (h/maxH)*ch, y = pad.t+ch-bh;
+        var lr = (i+1)/bins*maxL;
+        var col = lr<=0.03?'#ff6b6b':lr<=0.12?'#a87fff':lr<=0.22?'#00d4aa':'#4f9cff';
+        ctx2.fillStyle = col+'66'; ctx2.strokeStyle = col; ctx2.lineWidth = 0.8;
+        ctx2.fillRect(x, y, bw-1, bh); ctx2.strokeRect(x, y, bw-1, bh);
+      });
+      // Tranche lines
+      [[0.03,'#ff6b6b','3%'],[0.12,'#a87fff','12%'],[0.22,'#00d4aa','22%']].forEach(function(t) {
+        var tx = pad.l + (t[0]/maxL)*cw;
+        ctx2.beginPath(); ctx2.strokeStyle = t[1]; ctx2.lineWidth = 1.5;
+        ctx2.setLineDash([4,3]); ctx2.moveTo(tx, pad.t); ctx2.lineTo(tx, pad.t+ch); ctx2.stroke(); ctx2.setLineDash([]);
+        ctx2.fillStyle = t[1]; ctx2.font = '10px monospace'; ctx2.textAlign = 'center';
+        ctx2.fillText(t[2], tx, pad.t+10);
+      });
+      // X labels
+      ctx2.fillStyle = '#545f75'; ctx2.font = '10px monospace'; ctx2.textAlign = 'center';
+      for (var xi = 0; xi <= 5; xi++) ctx2.fillText((xi/5*maxL*100).toFixed(0)+'%', pad.l+(xi/5)*cw, H-5);
+      // Tranche probabilities
+      var live = document.getElementById('cdo-tranches-live');
+      if (!live) return;
+      var N = losses.length;
+      var trs = [
+        {label:'🔵 Super Senior [22%+]', pct:losses.filter(function(l){return l>0.22*0.6;}).length/N, col:'#4f9cff'},
+        {label:'🟢 Senior [12-22%]',     pct:losses.filter(function(l){return l>0.12*0.6;}).length/N, col:'#00d4aa'},
+        {label:'🟣 Mezzanine [3-12%]',   pct:losses.filter(function(l){return l>0.03*0.6;}).length/N, col:'#a87fff'},
+        {label:'🔴 Equity [0-3%]',       pct:losses.filter(function(l){return l>0;}).length/N,        col:'#ff6b6b'},
+      ];
+      live.innerHTML = trs.map(function(t) {
+        var w = Math.round(t.pct*100);
+        return '<div style="margin-bottom:8px">' +
+          '<div style="display:flex;justify-content:space-between;margin-bottom:3px">' +
+          '<span style="font-size:12px;color:'+t.col+'">'+t.label+'</span>' +
+          '<strong style="font-size:12px;color:'+t.col+'">'+w+'%</strong></div>' +
+          '<div style="height:5px;background:var(--bd);border-radius:3px;overflow:hidden">' +
+          '<div style="height:100%;width:'+w+'%;background:'+t.col+';border-radius:3px;transition:width .4s"></div>' +
+          '</div></div>';
+      }).join('');
+    }, 10);
+  }, 300);
 }
 
 // ── Brownian Motion Simulator ─────────────────────────────────────
 function updateBM() {
-  var mu=(+document.getElementById('bm-mu').value)/100;
-  var sig=(+document.getElementById('bm-sig').value)/100;
-  var nPaths=+document.getElementById('bm-n').value;
-  document.getElementById('bm-mu-v').textContent=(mu*100).toFixed(0)+'%';
-  document.getElementById('bm-sig-v').textContent=(sig*100).toFixed(0)+'%';
-  document.getElementById('bm-n-v').textContent=nPaths;
-  var canvas=document.getElementById('bm-canvas');
-  if(!canvas) return;
-  var steps=100, dt=1/steps, finals=[];
-  var paths=[];
-  for(var p=0;p<nPaths;p++){
-    var path=[100], S=100;
-    for(var i=0;i<steps;i++){S*=Math.exp((mu-sig*sig/2)*dt+sig*Math.sqrt(dt)*rn());path.push(S);}
+  var mu  = (+document.getElementById('bm-mu').value)  / 100;
+  var sig = (+document.getElementById('bm-sig').value) / 100;
+  var nP  = +document.getElementById('bm-n').value;
+  var el;
+  el = document.getElementById('bm-mu-v');  if(el) el.textContent = (mu*100).toFixed(0)+'%';
+  el = document.getElementById('bm-sig-v'); if(el) el.textContent = (sig*100).toFixed(0)+'%';
+  el = document.getElementById('bm-n-v');   if(el) el.textContent = nP;
+  var canvas = document.getElementById('bm-canvas');
+  if (!canvas) return;
+  var steps = 100, dt = 1/steps, paths = [], finals = [];
+  for (var p = 0; p < nP; p++) {
+    var path = [100], S = 100;
+    for (var i = 0; i < steps; i++) {
+      S *= Math.exp((mu - sig*sig/2)*dt + sig*Math.sqrt(dt)*rn());
+      path.push(S);
+    }
     paths.push(path); finals.push(S);
   }
-  drawCanvas(canvas, function(ctx,W,H){
-    var pad={l:40,r:15,t:15,b:28},cw=W-pad.l-pad.r,ch=H-pad.t-pad.b;
-    var allVals=paths.flat(); var minV=Math.min.apply(null,allVals), maxV=Math.max.apply(null,allVals);
-    var range=maxV-minV||1;
-    // Grid
-    ctx.strokeStyle='#1e2230'; ctx.lineWidth=1;
-    for(var g=0;g<=4;g++){var y=pad.t+g*ch/4;ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+cw,y);ctx.stroke();}
-    // Y labels
-    ctx.fillStyle='#545f75';ctx.font='10px DM Mono,monospace';ctx.textAlign='right';
-    for(var g=0;g<=4;g++){var v=maxV-(g/4)*range;ctx.fillText(v.toFixed(0),pad.l-4,pad.t+g*ch/4+4);}
-    // Paths
-    paths.forEach(function(path,pi){
-      var hue=pi/nPaths;
-      ctx.strokeStyle='hsla('+(hue*360)+',70%,60%,0.4)'; ctx.lineWidth=1;
-      ctx.beginPath();
-      path.forEach(function(v,i){
-        var x=pad.l+i/steps*cw, y=pad.t+(1-(v-minV)/range)*ch;
-        i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+  // Use rAF so the page has rendered and canvas has real width
+  requestAnimationFrame(function() {
+    drawCanvas(canvas, function(ctx, W, H) {
+      var pad = {l:40,r:15,t:15,b:28}, cw = W-pad.l-pad.r, ch = H-pad.t-pad.b;
+      var allV = paths.reduce(function(a,b){return a.concat(b);},[]);
+      var minV = Math.min.apply(null,allV), maxV = Math.max.apply(null,allV);
+      var range = maxV - minV || 1;
+      // Grid
+      ctx.strokeStyle='#1e2230'; ctx.lineWidth=1;
+      for (var g=0;g<=4;g++) {
+        var y=pad.t+g*ch/4;
+        ctx.beginPath(); ctx.moveTo(pad.l,y); ctx.lineTo(pad.l+cw,y); ctx.stroke();
+      }
+      // Y labels
+      ctx.fillStyle='#545f75'; ctx.font='10px monospace'; ctx.textAlign='right';
+      for (var g=0;g<=4;g++) {
+        ctx.fillText((maxV-g/4*range).toFixed(0), pad.l-4, pad.t+g*ch/4+4);
+      }
+      // Paths
+      paths.forEach(function(path, pi) {
+        ctx.strokeStyle = 'hsla('+(pi/nP*300)+',70%,60%,0.5)'; ctx.lineWidth=1;
+        ctx.beginPath();
+        path.forEach(function(v,i) {
+          var x=pad.l+i/steps*cw, y=pad.t+(1-(v-minV)/range)*ch;
+          i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+        });
+        ctx.stroke();
       });
-      ctx.stroke();
+      // S0=100 baseline
+      var y100 = pad.t+(1-(100-minV)/range)*ch;
+      ctx.strokeStyle='#ffffff22'; ctx.lineWidth=1; ctx.setLineDash([4,4]);
+      ctx.beginPath(); ctx.moveTo(pad.l,y100); ctx.lineTo(pad.l+cw,y100); ctx.stroke();
+      ctx.setLineDash([]);
+      // X labels
+      ctx.fillStyle='#545f75'; ctx.textAlign='center';
+      ctx.fillText('0', pad.l, H-5);
+      ctx.fillText('0.5Y', pad.l+cw/2, H-5);
+      ctx.fillText('1Y', pad.l+cw, H-5);
     });
-    // S0=100 line
-    var y100=pad.t+(1-(100-minV)/range)*ch;
-    ctx.strokeStyle='#ffffff22'; ctx.lineWidth=1; ctx.setLineDash([4,4]);
-    ctx.beginPath(); ctx.moveTo(pad.l,y100); ctx.lineTo(pad.l+cw,y100); ctx.stroke(); ctx.setLineDash([]);
-    // X labels
-    ctx.fillStyle='#545f75';ctx.textAlign='center';
-    ctx.fillText('0',pad.l,H-5);ctx.fillText('0.5Y',pad.l+cw/2,H-5);ctx.fillText('1Y',pad.l+cw,H-5);
+    // Stats
+    var mean = finals.reduce(function(a,b){return a+b;},0)/nP;
+    var stats = document.getElementById('bm-stats');
+    if (stats) stats.innerHTML =
+      '<div class="kpi"><span class="kv">'+mean.toFixed(1)+'</span><span class="kl">S_T moy. MC</span></div>'+
+      '<div class="kpi"><span class="kv">'+(100*Math.exp(mu)).toFixed(1)+'</span><span class="kl">S_T moy. théo.</span></div>'+
+      '<div class="kpi"><span class="kv" style="color:var(--acc3)">'+(Math.min.apply(null,finals)).toFixed(1)+'</span><span class="kl">Min S_T</span></div>'+
+      '<div class="kpi"><span class="kv" style="color:var(--acc)">'+(Math.max.apply(null,finals)).toFixed(1)+'</span><span class="kl">Max S_T</span></div>';
   });
-  // Stats
-  var mean=finals.reduce(function(a,b){return a+b},0)/nPaths;
-  var theoryMean=100*Math.exp(mu*1);
-  var theoryStd=100*Math.exp(mu*1)*Math.sqrt(Math.exp(sig*sig*1)-1);
-  var stats=document.getElementById('bm-stats');
-  if(stats) stats.innerHTML='<div class="kpi"><span class="kv">'+mean.toFixed(1)+'</span><span class="kl">S_T moyen MC</span></div>'
-    +'<div class="kpi"><span class="kv">'+theoryMean.toFixed(1)+'</span><span class="kl">S_T moyen théo.</span></div>'
-    +'<div class="kpi"><span class="kv" style="color:var(--acc3)">'+(Math.min.apply(null,finals)).toFixed(1)+'</span><span class="kl">Min S_T</span></div>'
-    +'<div class="kpi"><span class="kv" style="color:var(--acc)">'+(Math.max.apply(null,finals)).toFixed(1)+'</span><span class="kl">Max S_T</span></div>';
 }
 
 // ── Monte Carlo Option Pricer ─────────────────────────────────────
+var _mcTimer = null;
 function updateMC() {
-  var S0=+document.getElementById('mc-s0').value;
-  var K=+document.getElementById('mc-k').value;
-  var sig=+document.getElementById('mc-sig').value/100;
-  var r=+document.getElementById('mc-r').value/100;
-  var T=+document.getElementById('mc-t').value;
-  var N=+document.getElementById('mc-n').value;
-  document.getElementById('mc-s0-v').textContent=S0;
-  document.getElementById('mc-k-v').textContent=K;
-  document.getElementById('mc-sig-v').textContent=(sig*100).toFixed(0)+'%';
-  document.getElementById('mc-r-v').textContent=(r*100).toFixed(1)+'%';
-  document.getElementById('mc-t-v').textContent=T;
-  document.getElementById('mc-n-v').textContent=N.toLocaleString('fr-FR');
-
-  // Monte Carlo simulation
-  var payoffs=[], sts=[];
-  for(var i=0;i<N;i++){
-    var z=rn();
-    var ST=S0*Math.exp((r-sig*sig/2)*T+sig*Math.sqrt(T)*z);
-    sts.push(ST);
-    payoffs.push(Math.max(ST-K,0));
-  }
-  var mcPrice=Math.exp(-r*T)*payoffs.reduce(function(a,b){return a+b},0)/N;
-  var mcStd=Math.sqrt(payoffs.map(function(p){return (p-payoffs.reduce(function(a,b){return a+b},0)/N)*(p-payoffs.reduce(function(a,b){return a+b},0)/N);}).reduce(function(a,b){return a+b},0)/N)*Math.exp(-r*T)/Math.sqrt(N);
-
-  // Black-Scholes exact
-  var d1=(Math.log(S0/K)+(r+sig*sig/2)*T)/(sig*Math.sqrt(T));
-  var d2=d1-sig*Math.sqrt(T);
-  var bsPrice=S0*ncdf(d1)-K*Math.exp(-r*T)*ncdf(d2);
-
-  document.getElementById('mc-price-mc').textContent=mcPrice.toFixed(3)+'€';
-  document.getElementById('mc-price-bs').textContent=bsPrice.toFixed(3)+'€';
-  document.getElementById('mc-error').textContent=(Math.abs(mcPrice-bsPrice)).toFixed(3)+'€';
-  document.getElementById('mc-stderr').textContent='±'+mcStd.toFixed(3)+'€';
-
-  // Draw distribution
-  var canvas=document.getElementById('mc-canvas');
-  if(!canvas) return;
-  var bins=40, minST=Math.min.apply(null,sts), maxST=Math.max.apply(null,sts);
-  var hist=new Array(bins).fill(0);
-  sts.forEach(function(s){var idx=Math.min(Math.floor((s-minST)/(maxST-minST)*bins),bins-1);hist[idx]++;});
-  drawCanvas(canvas, function(ctx,W,H){
-    var pad={l:30,r:15,t:15,b:28},cw=W-pad.l-pad.r,ch=H-pad.t-pad.b;
-    var maxH=Math.max.apply(null,hist), bw=cw/bins;
-    hist.forEach(function(h,i){
-      if(!h) return;
-      var x=pad.l+i*bw, bh=(h/maxH)*ch, y=pad.t+ch-bh;
-      var sval=minST+(i+0.5)/bins*(maxST-minST);
-      var col=sval>=K?'#00d4aa55':'#ff6b6b55';
-      var sc=sval>=K?'#00d4aa':'#ff6b6b';
-      ctx.fillStyle=col; ctx.strokeStyle=sc; ctx.lineWidth=0.5;
-      ctx.fillRect(x,y,bw-1,bh); ctx.strokeRect(x,y,bw-1,bh);
-    });
-    // Strike line
-    var kx=pad.l+(K-minST)/(maxST-minST)*cw;
-    if(kx>pad.l&&kx<pad.l+cw){
-      ctx.beginPath();ctx.strokeStyle='#ffd166';ctx.lineWidth=2;ctx.setLineDash([4,3]);
-      ctx.moveTo(kx,pad.t);ctx.lineTo(kx,pad.t+ch);ctx.stroke();ctx.setLineDash([]);
-      ctx.fillStyle='#ffd166';ctx.font='10px DM Mono,monospace';ctx.textAlign='center';
-      ctx.fillText('K='+K,kx,pad.t+10);
+  var S0  = +document.getElementById('mc-s0').value;
+  var K   = +document.getElementById('mc-k').value;
+  var sig = +document.getElementById('mc-sig').value / 100;
+  var r   = +document.getElementById('mc-r').value / 100;
+  var T   = +document.getElementById('mc-t').value;
+  var N   = +document.getElementById('mc-n').value;
+  var el;
+  el=document.getElementById('mc-s0-v');  if(el) el.textContent=S0;
+  el=document.getElementById('mc-k-v');   if(el) el.textContent=K;
+  el=document.getElementById('mc-sig-v'); if(el) el.textContent=(sig*100).toFixed(0)+'%';
+  el=document.getElementById('mc-r-v');   if(el) el.textContent=(r*100).toFixed(1)+'%';
+  el=document.getElementById('mc-t-v');   if(el) el.textContent=T;
+  el=document.getElementById('mc-n-v');   if(el) el.textContent=N.toLocaleString('fr-FR');
+  clearTimeout(_mcTimer);
+  _mcTimer = setTimeout(function() {
+    // Monte Carlo
+    var payoffs=[],STs=[];
+    for (var i=0;i<N;i++) {
+      var z=rn();
+      var ST=S0*Math.exp((r-sig*sig/2)*T+sig*Math.sqrt(T)*z);
+      STs.push(ST); payoffs.push(Math.max(ST-K,0));
     }
-    // X labels
-    ctx.fillStyle='#545f75';ctx.font='10px DM Mono,monospace';ctx.textAlign='center';
-    ctx.fillText(minST.toFixed(0),pad.l,H-5);
-    ctx.fillText(maxST.toFixed(0),pad.l+cw,H-5);
-    ctx.fillText(((minST+maxST)/2).toFixed(0),pad.l+cw/2,H-5);
-  });
+    var meanPayoff = payoffs.reduce(function(a,b){return a+b;},0)/N;
+    var mcPrice = Math.exp(-r*T)*meanPayoff;
+    // Standard error
+    var variance = payoffs.reduce(function(a,b){return a+(b-meanPayoff)*(b-meanPayoff);},0)/N;
+    var stderr = Math.sqrt(variance/N)*Math.exp(-r*T);
+    // Black-Scholes exact
+    var d1=(Math.log(S0/K)+(r+sig*sig/2)*T)/(sig*Math.sqrt(T));
+    var d2=d1-sig*Math.sqrt(T);
+    var bsPrice=S0*ncdf(d1)-K*Math.exp(-r*T)*ncdf(d2);
+    // Update display
+    el=document.getElementById('mc-price-mc'); if(el) el.textContent=mcPrice.toFixed(3)+'€';
+    el=document.getElementById('mc-price-bs'); if(el) el.textContent=bsPrice.toFixed(3)+'€';
+    el=document.getElementById('mc-error');    if(el) el.textContent=Math.abs(mcPrice-bsPrice).toFixed(3)+'€';
+    el=document.getElementById('mc-stderr');   if(el) el.textContent='±'+stderr.toFixed(3)+'€';
+    // Draw histogram
+    var canvas=document.getElementById('mc-canvas');
+    if (!canvas) return;
+    var bins=40, minST=Math.min.apply(null,STs), maxST=Math.max.apply(null,STs);
+    var hist=new Array(bins).fill(0);
+    STs.forEach(function(s){hist[Math.min(Math.floor((s-minST)/(maxST-minST+0.001)*bins),bins-1)]++;});
+    requestAnimationFrame(function(){
+      drawCanvas(canvas, function(ctx,W,H){
+        var pad={l:30,r:15,t:15,b:28},cw=W-pad.l-pad.r,ch=H-pad.t-pad.b;
+        var maxH=Math.max.apply(null,hist), bw=cw/bins;
+        hist.forEach(function(h,i){
+          if(!h) return;
+          var x=pad.l+i*bw, bh=(h/maxH)*ch, y=pad.t+ch-bh;
+          var sv=minST+(i+0.5)/bins*(maxST-minST);
+          ctx.fillStyle=sv>=K?'#00d4aa44':'#ff6b6b44';
+          ctx.strokeStyle=sv>=K?'#00d4aa':'#ff6b6b';
+          ctx.lineWidth=0.5;
+          ctx.fillRect(x,y,bw-1,bh); ctx.strokeRect(x,y,bw-1,bh);
+        });
+        // Strike line
+        var kx=pad.l+(K-minST)/(maxST-minST)*cw;
+        if(kx>pad.l&&kx<pad.l+cw){
+          ctx.beginPath();ctx.strokeStyle='#ffd166';ctx.lineWidth=2;ctx.setLineDash([4,3]);
+          ctx.moveTo(kx,pad.t);ctx.lineTo(kx,pad.t+ch);ctx.stroke();ctx.setLineDash([]);
+          ctx.fillStyle='#ffd166';ctx.font='10px monospace';ctx.textAlign='center';
+          ctx.fillText('K='+K, kx, pad.t+10);
+        }
+        // X labels
+        ctx.fillStyle='#545f75';ctx.font='10px monospace';ctx.textAlign='center';
+        ctx.fillText(minST.toFixed(0),pad.l,H-5);
+        ctx.fillText(((minST+maxST)/2).toFixed(0),pad.l+cw/2,H-5);
+        ctx.fillText(maxST.toFixed(0),pad.l+cw,H-5);
+      });
+    });
+  }, 400);
 }
 
 // ── MC CDO full simulator ─────────────────────────────────────────
@@ -3003,57 +3020,47 @@ function updatePoisson() {
   var lamEl=document.getElementById('pois-lam'), rEl=document.getElementById('pois-r'), nEl=document.getElementById('pois-n');
   if(!lamEl||!rEl||!nEl) return;
   var lam=+lamEl.value/100, R=+rEl.value/100, N=+nEl.value;
-  document.getElementById('pois-lam-v').textContent=(lam*100).toFixed(1)+'%';
-  document.getElementById('pois-r-v').textContent=(R*100).toFixed(0)+'%';
-  document.getElementById('pois-n-v').textContent=N.toLocaleString('fr-FR');
-
-  // Simulate default times
-  var taus=[];
-  for(var i=0;i<N;i++){
-    var u=Math.random();
-    taus.push(-Math.log(1-u)/lam); // exponential with rate lam
-  }
-
-  var pd1=taus.filter(function(t){return t<=1;}).length/N;
-  var pd5=taus.filter(function(t){return t<=5;}).length/N;
-  var meanTau=taus.reduce(function(a,b){return a+b},0)/N;
-  var spread=(lam*(1-R)*10000).toFixed(0);
-
-  document.getElementById('pois-pd1').textContent=(pd1*100).toFixed(1)+'%';
-  document.getElementById('pois-pd5').textContent=(pd5*100).toFixed(1)+'%';
-  document.getElementById('pois-spread').textContent=spread+'bps';
-  document.getElementById('pois-mean').textContent=meanTau.toFixed(1)+'Y';
-
-  var canvas=document.getElementById('pois-canvas');
-  if(!canvas) return;
-  var maxT=Math.min(Math.max.apply(null,taus), 30);
-  var bins=30, hist=new Array(bins).fill(0);
-  taus.forEach(function(t){if(t<=maxT){var idx=Math.min(Math.floor(t/maxT*bins),bins-1);hist[idx]++;}});
-  var maxH=Math.max.apply(null,hist);
-  drawCanvas(canvas, function(ctx,W,H){
-    var pad={l:30,r:15,t:15,b:28},cw=W-pad.l-pad.r,ch=H-pad.t-pad.b;
-    var bw=cw/bins;
-    // Theoretical exponential
-    hist.forEach(function(h,i){
-      if(!h) return;
-      var x=pad.l+i*bw, bh=(h/maxH)*ch, y=pad.t+ch-bh;
-      ctx.fillStyle='#00d4aa33'; ctx.strokeStyle='#00d4aa'; ctx.lineWidth=0.5;
-      ctx.fillRect(x,y,bw-1,bh); ctx.strokeRect(x,y,bw-1,bh);
+  var el;
+  el=document.getElementById('pois-lam-v'); if(el) el.textContent=(lam*100).toFixed(1)+'%';
+  el=document.getElementById('pois-r-v');   if(el) el.textContent=(R*100).toFixed(0)+'%';
+  el=document.getElementById('pois-n-v');   if(el) el.textContent=N.toLocaleString('fr-FR');
+  clearTimeout(window._poisTimer);
+  window._poisTimer = setTimeout(function() {
+    var taus=[];
+    for(var i=0;i<N;i++) taus.push(-Math.log(1-Math.random())/lam);
+    var pd1=taus.filter(function(t){return t<=1;}).length/N;
+    var pd5=taus.filter(function(t){return t<=5;}).length/N;
+    var meanT=taus.reduce(function(a,b){return a+b;},0)/N;
+    el=document.getElementById('pois-pd1');    if(el) el.textContent=(pd1*100).toFixed(1)+'%';
+    el=document.getElementById('pois-pd5');    if(el) el.textContent=(pd5*100).toFixed(1)+'%';
+    el=document.getElementById('pois-spread'); if(el) el.textContent=Math.round(lam*(1-R)*10000)+'bps';
+    el=document.getElementById('pois-mean');   if(el) el.textContent=meanT.toFixed(1)+'Y';
+    var canvas=document.getElementById('pois-canvas');
+    if(!canvas) return;
+    var maxT=Math.min(Math.max.apply(null,taus),30);
+    var bins=30, hist=new Array(bins).fill(0);
+    taus.forEach(function(t){if(t<=maxT) hist[Math.min(Math.floor(t/maxT*bins),bins-1)]++;});
+    var maxH=Math.max.apply(null,hist); if(!maxH) return;
+    drawCanvas(canvas, function(ctx,W,H){
+      var pad={l:30,r:15,t:15,b:28},cw=W-pad.l-pad.r,ch=H-pad.t-pad.b,bw=cw/bins;
+      hist.forEach(function(h,i){
+        if(!h) return;
+        var x=pad.l+i*bw,bh=(h/maxH)*ch,y=pad.t+ch-bh;
+        ctx.fillStyle='#00d4aa33';ctx.strokeStyle='#00d4aa';ctx.lineWidth=0.5;
+        ctx.fillRect(x,y,bw-1,bh);ctx.strokeRect(x,y,bw-1,bh);
+      });
+      ctx.beginPath();ctx.strokeStyle='#ffd166';ctx.lineWidth=2;
+      for(var k=0;k<=bins*2;k++){
+        var t=k/bins*maxT/2;
+        var sN=N*maxT/bins*lam*Math.exp(-lam*t);
+        var x=pad.l+t/maxT*cw,y=pad.t+ch-(sN/maxH)*ch;
+        k===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+      }
+      ctx.stroke();
+      ctx.fillStyle='#545f75';ctx.font='10px monospace';ctx.textAlign='center';
+      for(var g=0;g<=5;g++) ctx.fillText((g*maxT/5).toFixed(1)+'Y',pad.l+g*cw/5,H-5);
     });
-    // Theoretical curve
-    ctx.beginPath(); ctx.strokeStyle='#ffd166'; ctx.lineWidth=2;
-    for(var i=0;i<=bins*2;i++){
-      var t=i/bins*maxT/2;
-      var density=lam*Math.exp(-lam*t);
-      var scaledN=N*maxT/bins*density;
-      var x=pad.l+t/maxT*cw, y=pad.t+ch-(scaledN/maxH)*ch;
-      i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
-    }
-    ctx.stroke();
-    // X axis
-    ctx.fillStyle='#545f75';ctx.font='10px DM Mono,monospace';ctx.textAlign='center';
-    for(var g=0;g<=5;g++) ctx.fillText((g*maxT/5).toFixed(1)+'Y', pad.l+g*cw/5, H-5);
-  });
+  }, 300);
 }
 
 // ── FLASHCARDS 2 ─────────────────────────────────────────────────
@@ -3125,7 +3132,7 @@ window.go = function(id, btn) {
   if (_go2Orig) _go2Orig(id, btn);
   var triggers = {
     'cdo': function(){ setTimeout(updateCDO, 150); },
-    'mc':  function(){ setTimeout(function(){ updateBM(); updateMC(); updatePoisson(); updateMCCDO(); }, 150); },
+    'mc':  function(){ setTimeout(function(){ updateBM(); updateMC(); updatePoisson(); updateMCCDO(); }, 250); },
     'fc2': function(){ setTimeout(fc2LoadCard, 150); }
   };
   if (triggers[id]) triggers[id]();
@@ -4418,6 +4425,359 @@ Les CDS trades sont exprimés en spread (pas de notion de clean/dirty price).</d
 
 </div></div><!-- /pg-market -->
 
+<!-- ════════════════ PAGE CARRY ════════════════ -->
+<div class="page" id="pg-carry">
+<div class="wrap" style="padding-top:80px;padding-bottom:60px">
+<div class="ph">
+  <div class="ph-tag">Module 20 — Concepts de Base</div>
+  <div class="ph-title">Carry · Roll-down · P&L Expliqué en Simple</div>
+  <div class="ph-sub">Les concepts que tout le monde utilise mais que personne n'explique vraiment. Carry, roll-down, theta, funding — de zéro jusqu'à leur application sur un desk de crédit.</div>
+</div>
+<div class="tab2-bar">
+  <button class="tab2-btn active" onclick="tab2('carry','carry',this)">C'est quoi le Carry ?</button>
+  <button class="tab2-btn" onclick="tab2('carry','rolldown',this)">Roll-down</button>
+  <button class="tab2-btn" onclick="tab2('carry','credit',this)">Carry en Crédit</button>
+  <button class="tab2-btn" onclick="tab2('carry','itraxx',this)">Carry sur iTraxx</button>
+  <button class="tab2-btn" onclick="tab2('carry','calc',this)">Calculatrice</button>
+  <button class="tab2-btn" onclick="tab2('carry','qa',this)">Questions Entretien</button>
+</div>
+
+<!-- C'EST QUOI LE CARRY -->
+<div class="tp2 active" id="carry-carry">
+<div class="sh2"><span class="sh2-num">20.1</span><span class="sh2-title">Le Carry — L'idée de base</span><span class="sh2-line"></span></div>
+<div class="box teal" style="font-size:14px;line-height:1.8">
+  <strong>Définition simple :</strong> Le carry, c'est ce que tu gagnes (ou perds) <strong>juste en attendant</strong>, si rien ne change dans le marché.<br/>
+  Autrement dit : si les taux, les spreads, les prix restent exactement les mêmes demain qu'aujourd'hui — combien tu gagnes en tenant ta position une journée de plus ?
+</div>
+<div class="col2">
+<div>
+<div class="card accent-teal">
+  <div class="card-title">Exemple concret — Obligataire</div>
+  <div class="desc" style="color:var(--t2)">
+    Tu achètes un bond d'entreprise qui paie un coupon de <strong style="color:var(--t1)">5% par an</strong>.<br/>
+    Tu le finances en empruntant au taux overnight (OIS) de <strong style="color:var(--t1)">3% par an</strong>.<br/><br/>
+    <strong>Carry net = 5% − 3% = 2% par an</strong><br/>
+    = 2% / 365 ≈ <strong style="color:var(--acc)">0.55bps par jour</strong><br/><br/>
+    Chaque jour que tu tiens le bond sans que rien ne bouge, tu gagnes 0.55bps de ton notionnel. Sur 10M€ : <strong style="color:var(--acc)">≈ 550€/jour</strong>.
+  </div>
+</div>
+<div class="box gold">
+  <strong>Le carry c'est différent de la performance totale.</strong><br/>
+  La performance totale = carry + variation du prix.<br/>
+  Un bond peut avoir un carry positif (coupon > funding) mais perdre de la valeur si les spreads s'écartent. Le carry est la partie "certaine" si les marchés restent immobiles.
+</div>
+</div>
+<div>
+<div class="card accent-gold">
+  <div class="card-title">Exemple CDS — Vendre de la Protection</div>
+  <div class="desc" style="color:var(--t2)">
+    Tu <strong style="color:var(--t1)">vends protection</strong> sur Renault via un CDS 5Y à <strong style="color:var(--t1)">120bps/an</strong>.<br/><br/>
+    Tu reçois 120bps × N / 4 chaque trimestre (paiement trimestriel).<br/>
+    Sur N = 10M€ : <strong style="color:var(--acc)">30 000€ par trimestre</strong> = 120K€/an.<br/><br/>
+    Tant que Renault ne fait pas défaut, tu encaisses ce carry.<br/>
+    <strong style="color:var(--acc3)">Risque :</strong> Si Renault fait défaut, tu perds N × (1-R) = 6M€ → il faut que ce risque soit rémunéré.
+  </div>
+</div>
+<div class="card">
+  <div class="card-title">Carry positif vs négatif</div>
+  <div class="desc" style="color:var(--t2)">
+    <strong style="color:var(--acc)">Carry positif :</strong> Tu es payé pour tenir la position.<br/>
+    Ex: Short CDS (tu vends protection), long bond corporate, long equity avec dividende.<br/><br/>
+    <strong style="color:var(--acc3)">Carry négatif :</strong> Tu paies pour tenir la position.<br/>
+    Ex: Long CDS (tu achètes protection = tu paies 120bps/an), long put option (tu paies le theta), short bond corporate.<br/><br/>
+    <strong style="color:var(--t1)">Dans les marchés à taux élevés</strong> (comme depuis 2022), le carry positif est très attractif — le simple fait de posséder des actifs de crédit rapporte davantage que la couverture du risque de taux.
+  </div>
+</div>
+</div>
+</div>
+
+<div class="sh2"><span class="sh2-num">20.2</span><span class="sh2-title">Les 3 composantes du P&L quotidien</span><span class="sh2-line"></span></div>
+<div class="svg-wrap">
+<div class="svg-title">Décomposition du P&L d'une position obligataire sur 1 journée</div>
+<svg viewBox="0 0 760 160" style="width:100%;display:block;">
+  <rect width="760" height="160" fill="#111318"/>
+  <!-- Total PnL box -->
+  <rect x="20" y="30" width="140" height="100" rx="8" fill="#181c24" stroke="#00d4aa" stroke-width="2"/>
+  <text x="90" y="58" text-anchor="middle" fill="#00d4aa" font-family="sans-serif" font-size="12" font-weight="700">P&amp;L Total</text>
+  <text x="90" y="78" text-anchor="middle" fill="#00d4aa" font-family="monospace" font-size="14" font-weight="700">+1 850€</text>
+  <text x="90" y="98" text-anchor="middle" fill="#545f75" font-family="monospace" font-size="10">sur 10M€, 1 jour</text>
+  <!-- Arrow -->
+  <text x="175" y="82" fill="#545f75" font-family="sans-serif" font-size="18">=</text>
+  <!-- Carry -->
+  <rect x="195" y="30" width="150" height="100" rx="8" fill="rgba(0,212,170,.08)" stroke="#00d4aa" stroke-width="1.5"/>
+  <text x="270" y="52" text-anchor="middle" fill="#00d4aa" font-family="monospace" font-size="10" letter-spacing=".1em">CARRY</text>
+  <text x="270" y="72" text-anchor="middle" fill="#00d4aa" font-family="monospace" font-size="14" font-weight="700">+550€</text>
+  <text x="270" y="92" text-anchor="middle" fill="#545f75" font-family="monospace" font-size="9">coupon 5% - funding 3%</text>
+  <text x="270" y="108" text-anchor="middle" fill="#545f75" font-family="monospace" font-size="9">= 2%/365 × 10M€</text>
+  <!-- Plus -->
+  <text x="358" y="82" fill="#545f75" font-family="sans-serif" font-size="18">+</text>
+  <!-- Roll-down -->
+  <rect x="375" y="30" width="150" height="100" rx="8" fill="rgba(79,156,255,.08)" stroke="#4f9cff" stroke-width="1.5"/>
+  <text x="450" y="52" text-anchor="middle" fill="#4f9cff" font-family="monospace" font-size="10" letter-spacing=".1em">ROLL-DOWN</text>
+  <text x="450" y="72" text-anchor="middle" fill="#4f9cff" font-family="monospace" font-size="14" font-weight="700">+500€</text>
+  <text x="450" y="92" text-anchor="middle" fill="#545f75" font-family="monospace" font-size="9">bond glisse vers</text>
+  <text x="450" y="108" text-anchor="middle" fill="#545f75" font-family="monospace" font-size="9">une échéance plus courte</text>
+  <!-- Plus -->
+  <text x="538" y="82" fill="#545f75" font-family="sans-serif" font-size="18">+</text>
+  <!-- MTM -->
+  <rect x="555" y="30" width="180" height="100" rx="8" fill="rgba(255,107,107,.08)" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="645" y="52" text-anchor="middle" fill="#ff6b6b" font-family="monospace" font-size="10" letter-spacing=".1em">MTM (SPREAD MOVE)</text>
+  <text x="645" y="72" text-anchor="middle" fill="#ff6b6b" font-family="monospace" font-size="14" font-weight="700">+800€</text>
+  <text x="645" y="92" text-anchor="middle" fill="#545f75" font-family="monospace" font-size="9">spread resserré de</text>
+  <text x="645" y="108" text-anchor="middle" fill="#545f75" font-family="monospace" font-size="9">0.2bps × CS01 (4000€/bp)</text>
+</svg>
+</div>
+<div class="box blue">
+  <strong>À retenir :</strong> Le carry et le roll-down constituent le P&L "de base" — celui qu'on génère juste en tenant la position dans un marché immobile. Le MTM est la partie qui fluctue avec les mouvements de marché. Un bon trade crédit a un carry+roll-down positif qui compense le risque de mouvements adverses.
+</div>
+</div>
+
+<!-- ROLL-DOWN -->
+<div class="tp2" id="carry-rolldown">
+<div class="sh2"><span class="sh2-num">20.3</span><span class="sh2-title">Le Roll-down — Profiter de la pente de la courbe</span><span class="sh2-line"></span></div>
+<div class="box teal" style="font-size:14px;line-height:1.8">
+  <strong>Idée :</strong> Quand une obligation vieillit d'un jour, elle devient une obligation à échéance légèrement plus courte. Si la courbe de crédit est "normale" (pente positive — les spreads à long terme sont plus élevés qu'à court terme), cette obligation se retrouve à une partie de la courbe avec un spread légèrement plus bas → son prix monte légèrement. C'est le <strong>roll-down</strong>.
+</div>
+<div class="col2">
+<div>
+<div class="card accent-blue">
+  <div class="card-title">Illustration avec des chiffres</div>
+  <div class="desc" style="color:var(--t2)">
+    La courbe de spread crédit de Renault :<br/>
+    <table style="width:100%;font-size:12px;margin-top:8px;color:var(--t2)">
+      <tr><td style="color:var(--t1);font-weight:600;padding:3px 0">4Y</td><td>100bps</td></tr>
+      <tr><td style="color:var(--t1);font-weight:600;padding:3px 0">5Y</td><td>120bps</td></tr>
+      <tr><td style="color:var(--t1);font-weight:600;padding:3px 0">6Y</td><td>140bps</td></tr>
+    </table>
+    <br/>
+    Tu achètes un CDS 5Y aujourd'hui à 120bps.<br/>
+    Dans 1 an (si la courbe ne bouge pas), ce CDS est devenu un CDS 4Y.<br/>
+    Un CDS 4Y se trade à 100bps → ton CDS vaut maintenant plus cher<br/>
+    (tu reçois 120bps alors que le marché est à 100bps).<br/><br/>
+    <strong style="color:var(--acc)">Roll-down sur 1 an ≈ (120−100)bps × RD_4Y ≈ 20 × 3.7 ≈ 74bps de gain</strong>
+  </div>
+</div>
+</div>
+<div>
+<div class="card accent-gold">
+  <div class="card-title">Roll-down vs Carry — La différence</div>
+  <div class="desc" style="color:var(--t2)">
+    <strong style="color:var(--t1)">Carry :</strong> Ce que tu reçois simplement parce que le temps passe — le coupon ou la prime de CDS. C'est contractuel et prévisible.<br/><br/>
+    <strong style="color:var(--t1)">Roll-down :</strong> Le gain lié au fait que ton instrument "glisse" vers le bas d'une courbe pentue. C'est conditionnel à la forme de la courbe restant stable.<br/><br/>
+    <strong style="color:var(--acc)">Carry + Roll-down = "Carry total"</strong> sur un desk de trading.<br/><br/>
+    Sur un CDS 5Y avec 120bps de spread :<br/>
+    • Carry pur = 120bps/an (prime reçue si tu vends protection)<br/>
+    • Roll-down annuel ≈ 20bps (si courbe a 20bps/an de pente)<br/>
+    • Carry total ≈ 140bps/an de valeur créée "gratuitement"
+  </div>
+</div>
+<div class="box red">
+  <strong>Risque du roll-down :</strong> Si la courbe de crédit se pentifie (le spread 5Y monte plus que le 4Y), le roll-down peut devenir négatif — tu perds de l'argent même si le spread du nom reste stable. C'est un risque de <strong>forme de courbe</strong>, pas de niveau.
+</div>
+</div>
+</div>
+</div>
+
+<!-- CARRY EN CREDIT -->
+<div class="tp2" id="carry-credit">
+<div class="sh2"><span class="sh2-num">20.4</span><span class="sh2-title">Carry en Crédit — Les différents instruments</span><span class="sh2-line"></span></div>
+<div class="col2">
+<div>
+<div class="card accent-teal">
+  <div class="card-title">Bond corporate — Long carry</div>
+  <div class="desc" style="color:var(--t2)">
+    <strong>Position :</strong> Achète bond Renault 5Y coupon 4.5%, financé en repo à OIS+10bps = 3.6%.<br/><br/>
+    <strong>Carry brut :</strong> 4.5% − 3.6% = <strong style="color:var(--acc)">90bps/an</strong><br/><br/>
+    <strong>Mais attention aux coûts cachés :</strong><br/>
+    − Coût de couverture taux (IRS) : −20bps/an<br/>
+    − Coût de couverture change (si USD) : variable<br/>
+    − Capital réglementaire (RWA) : −10bps/an<br/><br/>
+    <strong>Carry net réel ≈ 60bps/an</strong><br/><br/>
+    C'est le "carry all-in" qui compte vraiment pour le desk.
+  </div>
+</div>
+<div class="card accent-gold">
+  <div class="card-title">CDS vendeur de protection — Long carry</div>
+  <div class="desc" style="color:var(--t2)">
+    <strong>Position :</strong> Vends protection CDS Renault 5Y à 120bps.<br/><br/>
+    <strong>Carry :</strong> Tu reçois <strong style="color:var(--acc)">120bps/an</strong> × N chaque trimestre.<br/><br/>
+    <strong>Pas de financement nécessaire</strong> (instrument synthétique)<br/>
+    → pas de coût de repo.<br/><br/>
+    <strong>Mais :</strong> Tu dois poster de la marge initiale (IM ≈ 5% du notionnel si clearé) → MVA = 5% × funding_spread ≈ −10bps/an.<br/><br/>
+    <strong>Carry net ≈ 110bps/an</strong> — plus efficace en capital que le bond.
+  </div>
+</div>
+</div>
+<div>
+<div class="card accent-red">
+  <div class="card-title">CDS acheteur de protection — Carry négatif</div>
+  <div class="desc" style="color:var(--t2)">
+    <strong>Position :</strong> Achète protection CDS Renault 5Y à 120bps.<br/><br/>
+    <strong>Carry :</strong> Tu <strong style="color:var(--acc3)">paies 120bps/an</strong> = carry négatif.<br/><br/>
+    C'est le coût de l'assurance. Chaque jour que Renault ne défaut pas, tu perds 120/365 × N.<br/><br/>
+    <strong>Pourquoi l'acheter quand même ?</strong><br/>
+    • Hedge d'une exposition existante au bond Renault<br/>
+    • Vue directionnelle : tu penses que le spread va monter (de 120bps à 200bps) → tu gagnes CS01 × 80bps = 4000€/bp × 80 = 320 000€ de MTM<br/>
+    • Carry négatif mais convexité positive (long gamma crédit)
+  </div>
+</div>
+<div class="card">
+  <div class="card-title">CLN investisseur — Carry bonifié</div>
+  <div class="desc" style="color:var(--t2)">
+    <strong>Position :</strong> Tu achètes une CLN émise par CACIB sur Renault, coupon EURIBOR + 200bps.<br/><br/>
+    <strong>Carry :</strong> <strong style="color:var(--acc)">EURIBOR + 200bps/an</strong><br/><br/>
+    <strong>Décomposition :</strong><br/>
+    • EURIBOR = rémunération du cash investi<br/>
+    • 80bps = risque CACIB (émetteur)<br/>
+    • 120bps = risque Renault (référence)<br/><br/>
+    C'est le carry le plus élevé mais le risque est double (émetteur + référence).
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- CARRY SUR ITRAXX -->
+<div class="tp2" id="carry-itraxx">
+<div class="sh2"><span class="sh2-num">20.5</span><span class="sh2-title">Carry sur l'iTraxx — Ce que tu lis dans les rapports</span><span class="sh2-line"></span></div>
+<div class="box blue" style="font-size:14px;line-height:1.8">
+  Quand les rapports de marché disent <em>"le carry sur l'iTraxx IG est attractif"</em>, voilà ce que ça veut dire concrètement.
+</div>
+<div class="col2">
+<div>
+<div class="card accent-teal">
+  <div class="card-title">Carry daily sur iTraxx IG 5Y</div>
+  <div class="desc" style="color:var(--t2)">
+    <strong>Contexte :</strong> iTraxx Europe IG 5Y à 65bps.<br/><br/>
+    <strong>Si tu vends protection</strong> (short risk, long carry) :<br/>
+    Carry journalier = 65bps / 365 jours = <strong style="color:var(--acc)">0.178bps par jour</strong><br/>
+    Sur 100M€ de notionnel : <strong style="color:var(--acc)">1 781€ par jour</strong><br/>
+    Sur 1 mois (≈21 jours de trading) : <strong style="color:var(--acc)">≈ 37 400€</strong><br/><br/>
+    <strong>C'est la rémunération journalière du risque de défaut</strong> que tu prends sur le panier de 125 noms IG.
+  </div>
+</div>
+<div class="card accent-gold">
+  <div class="card-title">Carry iTraxx vs Crossover</div>
+  <div class="desc" style="color:var(--t2)">
+    <table style="width:100%;font-size:12px;color:var(--t2)">
+      <tr style="border-bottom:1px solid var(--bd)">
+        <td style="padding:5px 0;color:var(--t1);font-weight:600">Indice</td>
+        <td style="padding:5px 0;color:var(--t1)">Spread</td>
+        <td style="padding:5px 0;color:var(--t1)">Carry/jour/100M€</td>
+      </tr>
+      <tr><td style="padding:5px 0">iTraxx IG 5Y</td><td>65bps</td><td style="color:var(--acc)">+1 781€</td></tr>
+      <tr><td style="padding:5px 0">iTraxx Xover 5Y</td><td>320bps</td><td style="color:var(--acc)">+8 767€</td></tr>
+      <tr><td style="padding:5px 0">CDX NA HY 5Y</td><td>380bps</td><td style="color:var(--acc)">+10 411€</td></tr>
+    </table>
+    <br/>
+    Le Crossover paie 5× plus de carry que l'IG — mais le risque de perte en cas de défauts est aussi beaucoup plus élevé.
+  </div>
+</div>
+</div>
+<div>
+<div class="card accent-red">
+  <div class="card-title">Carry vs Coût de la Protection</div>
+  <div class="desc" style="color:var(--t2)">
+    <strong>Si tu es gérant obligataire</strong> et tu veux te couvrir contre un élargissement des spreads IG :<br/><br/>
+    Tu achètes protection iTraxx IG → carry <strong style="color:var(--acc3)">négatif de −65bps/an</strong>.<br/><br/>
+    Sur un portefeuille de 500M€ :<br/>
+    Coût annuel du hedge = 500M × 65bps = <strong style="color:var(--acc3)">3.25M€/an</strong><br/><br/>
+    <strong>La décision :</strong> Ce coût de 3.25M€/an est-il justifié par la protection qu'il offre ? Si le spread s'écarte de 30bps, le hedge génère CS01 × 30 ≈ 20M€ de gain. L'arbitrage carry vs protection est au cœur de toutes les décisions de hedging.
+  </div>
+</div>
+<div class="box gold">
+  <strong>"Carry attractif" = quoi exactement ?</strong><br/>
+  Quand un rapport dit que le carry est attractif, il compare le carry à :<br/>
+  ① La probabilité historique de défaut (le carry compense-t-il le risque ?)<br/>
+  ② Le carry des autres actifs (obligations souveraines, actions)<br/>
+  ③ Le niveau historique du carry lui-même (est-on au-dessus ou en-dessous de la moyenne ?)<br/>
+  Si le spread CDS est au-dessus de sa moyenne historique sans raison fondamentale → carry "attractif".
+</div>
+</div>
+</div>
+
+<div class="sh2"><span class="sh2-num">20.6</span><span class="sh2-title">Le Theta — Le carry vu par les options</span><span class="sh2-line"></span></div>
+<div class="col2">
+<div class="card accent-purple">
+  <div class="card-title">Theta = Carry pour les options</div>
+  <div class="desc" style="color:var(--t2)">
+    En options, le carry s'appelle <strong style="color:var(--t1)">theta</strong> = perte de valeur de l'option avec le temps (si le sous-jacent ne bouge pas).<br/><br/>
+    <strong>Long option (acheteur) :</strong> Theta négatif = tu paies le carry chaque jour. Tu achètes de la convexité (gamma) en échange.<br/><br/>
+    <strong>Short option (vendeur) :</strong> Theta positif = tu reçois le carry. Tu encaisses la prime mais tu es exposé aux mouvements forts.<br/><br/>
+    <strong>Analogie crédit :</strong> Vendre protection CDS = vendre une option put sur la valeur des actifs (modèle Merton) → theta positif = carry positif, exposition aux gros défauts.
+  </div>
+</div>
+<div class="card">
+  <div class="card-title">Carry dans les trades de corrélation CDO</div>
+  <div class="desc" style="color:var(--t2)">
+    <strong>Long equity tranche + short senior tranche (long corrélation) :</strong><br/><br/>
+    • Equity [0-3%] : vendeur de protection → carry positif élevé (+2000bps/an)<br/>
+    • Senior [12-22%] : acheteur de protection → carry négatif (−50bps/an)<br/><br/>
+    <strong>Carry net du trade ≈ +1950bps/an sur l'equity notionnel</strong><br/><br/>
+    C'est un carry extraordinaire — mais si la corrélation baisse (défauts isolés dans l'equity), les pertes sur l'equity peuvent dépasser plusieurs années de carry en une seule journée.
+  </div>
+</div>
+</div>
+</div>
+
+<!-- CALCULATRICE CARRY -->
+<div class="tp2" id="carry-calc">
+<div class="sh2"><span class="sh2-num">20.7</span><span class="sh2-title">Calculatrice de Carry — Comparez vos positions</span><span class="sh2-line"></span></div>
+<div class="panel">
+  <div class="ptitle">CARRY CALCULATOR — CDS / BOND / CLN</div>
+  <div class="col2">
+  <div>
+    <div class="fg"><label>Notionnel (M€) <span class="vd" id="cy-n-v">10</span></label>
+    <input type="range" id="cy-n" min="1" max="200" step="1" value="10" oninput="updateCarry()"/></div>
+    <div class="fg"><label>Spread CDS / Coupon bond (bps) <span class="vd" id="cy-s-v">120</span></label>
+    <input type="range" id="cy-s" min="10" max="800" step="5" value="120" oninput="updateCarry()"/></div>
+    <div class="fg"><label>Taux OIS / Funding (%) <span class="vd" id="cy-f-v">3.5%</span></label>
+    <input type="range" id="cy-f" min="0" max="8" step="0.25" value="3.5" oninput="updateCarry()"/></div>
+    <div class="fg"><label>Pente courbe (bps/an) <span class="vd" id="cy-p-v">15</span></label>
+    <input type="range" id="cy-p" min="-20" max="50" step="1" value="15" oninput="updateCarry()"/></div>
+    <div class="fg"><label>Recovery R (%) <span class="vd" id="cy-r-v">40%</span></label>
+    <input type="range" id="cy-r" min="0" max="80" step="5" value="40" oninput="updateCarry()"/></div>
+  </div>
+  <div>
+    <div id="carry-results" style="display:flex;flex-direction:column;gap:10px;"></div>
+  </div>
+  </div>
+  <div id="carry-summary" style="margin-top:14px;background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:16px;font-size:13px;color:var(--t2);line-height:1.9;"></div>
+</div>
+</div>
+
+<!-- QA CARRY -->
+<div class="tp2" id="carry-qa">
+<div class="sh2"><span class="sh2-num">20.8</span><span class="sh2-title">Questions Entretien — Carry & Concepts de Base</span><span class="sh2-line"></span></div>
+<div class="acc open"><button class="acc-h" onclick="acc(this)"><span class="acc-q">C'est quoi le carry ? Donnez un exemple concret sur un CDS.</span><span class="acc-ico">+</span></button>
+<div class="acc-b"><div style="padding:4px 18px 16px;font-size:13px;color:var(--t2);line-height:1.7">
+<p>Le carry, c'est le P&L qu'on génère juste en attendant, <strong>si le marché ne bouge pas</strong>. C'est la rémunération du temps.</p>
+<p><strong>Sur un CDS :</strong> Si je vends protection sur Renault 5Y à 120bps, je reçois 120bps × 10M€ / 4 = 30 000€ par trimestre. Chaque trimestre sans défaut Renault, je touche ce carry. Si Renault ne fait pas défaut pendant 5 ans, j'ai gagné 600 000€ de carry total sur mon contrat.</p>
+<p><strong>Côté acheteur</strong> (pour se couvrir) : le carry est négatif = c'est le coût de l'assurance. Je paie 120bps/an pour être protégé.</p>
+</div></div></div>
+<div class="acc"><button class="acc-h" onclick="acc(this)"><span class="acc-q">Expliquez le roll-down. Pourquoi peut-il disparaître ou devenir négatif ?</span><span class="acc-ico">+</span></button>
+<div class="acc-b"><div style="padding:4px 18px 16px;font-size:13px;color:var(--t2);line-height:1.7">
+<p>Le roll-down est le gain lié au "vieillissement" d'un instrument sur une courbe de crédit pentue. Un CDS 5Y à 120bps, dans un an, sera un CDS 4Y. Si la courbe dit que le 4Y trade à 100bps, mon CDS vaut maintenant plus cher (je reçois 120bps alors que le marché est à 100bps) → gain de MTM ≈ 20bps × RD_4Y.</p>
+<p><strong>Il disparaît si :</strong> la courbe est plate (0bps entre 4Y et 5Y) → pas de gain de roll-down.</p>
+<p><strong>Il devient négatif si :</strong> la courbe est inversée (4Y &gt; 5Y) → en roulant, on arrive à un spread plus élevé → perte de MTM. Cela arrive parfois sur les distressed credits où le marché anticipe un défaut à court terme.</p>
+</div></div></div>
+<div class="acc"><button class="acc-h" onclick="acc(this)"><span class="acc-q">Pourquoi dit-on que le carry iTraxx est "attractif" ou "peu attractif" ?</span><span class="acc-ico">+</span></button>
+<div class="acc-b"><div style="padding:4px 18px 16px;font-size:13px;color:var(--t2);line-height:1.7">
+<p>Le carry iTraxx IG = spread de l'indice (ex: 65bps/an). Pour juger s'il est "attractif" :</p>
+<p><strong>1. Vs PD historique :</strong> Le taux de défaut historique des IG corporates ≈ 0.1%/an → LGD ≈ 60% → EL ≈ 6bps/an. Un spread de 65bps implique une prime de risque de 59bps au-dessus de l'EL. Attractif si on pense que les défauts resteront faibles.</p>
+<p><strong>2. Vs autres actifs :</strong> Si les bons du trésor à 5Y rapportent 3.5% et l'iTraxx permet de gagner 65bps de plus en risquant des défauts IG → attractif si la rémunération du risque semble suffisante.</p>
+<p><strong>3. Vs historique :</strong> Si l'iTraxx IG a traidé en moyenne à 80bps ces 10 dernières années → à 65bps aujourd'hui il est "riche" (peu de carry). À 110bps → "cheap" (beaucoup de carry).</p>
+</div></div></div>
+<div class="acc"><button class="acc-h" onclick="acc(this)"><span class="acc-q">Quelle est la différence entre carry brut, carry net et carry all-in ?</span><span class="acc-ico">+</span></button>
+<div class="acc-b"><div style="padding:4px 18px 16px;font-size:13px;color:var(--t2);line-height:1.7">
+<p><strong>Carry brut :</strong> Le coupon ou la prime de CDS seuls. Ex: bond à 4.5% → carry brut = 4.5%/an.</p>
+<p><strong>Carry net :</strong> Carry brut moins le coût de financement. Ex: 4.5% − OIS 3.5% = 1%/an net de funding.</p>
+<p><strong>Carry all-in :</strong> Carry net moins TOUS les coûts réels du desk → coût de couverture du risque de taux (IRS), coût de change si applicable, coût réglementaire (RWA/capital charge), coût opérationnel (back-office, legal). Sur un desk de crédit : carry all-in = ce qui reste après tout ça. Souvent 30-50% de moins que le carry brut.</p>
+</div></div></div>
+</div>
+
+</div></div><!-- /pg-carry -->
+
 </body>
 
 <script>
@@ -4478,174 +4838,65 @@ window.addEventListener('load', function() {
   setTimeout(updateCalc, 500);
 });
 </script>
-
 <script>
-// ═══════════════════════════════════════════
-// MOBILE MENU
-// ═══════════════════════════════════════════
-function mobToggle() {
-  var drawer = document.getElementById('mob-drawer');
-  if (drawer.classList.contains('open')) {
-    mobClose();
-  } else {
-    drawer.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-}
-function mobOpen() {
-  document.getElementById('mob-drawer').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function mobClose() {
-  document.getElementById('mob-drawer').classList.remove('open');
-  document.body.style.overflow = '';
-}
-function mobDrawerClick(e) {
-  if (e.target === document.getElementById('mob-drawer')) mobClose();
-}
-function goMob(id) {
-  if (typeof go === 'function') go(id, null);
-  // Update active state
-  document.querySelectorAll('.mob-nav-btn').forEach(function(b) {
-    b.classList.toggle('active', b.getAttribute('onclick') === "goMob('" + id + "')");
-  });
-  mobClose();
-}
-
-// ═══════════════════════════════════════════
-// TOUCH SWIPE for flashcards
-// ═══════════════════════════════════════════
-var _touchX = 0;
-document.addEventListener('touchstart', function(e) {
-  _touchX = e.changedTouches[0].screenX;
-}, {passive:true});
-document.addEventListener('touchend', function(e) {
-  var dx = _touchX - e.changedTouches[0].screenX;
-  if (Math.abs(dx) > 50) {
-    try { if (dx > 0) fc2Next(); else fc2Prev(); } catch(e){}
-    try { if (dx > 0) fcNext(); else fcPrev(); } catch(e){}
-  }
-}, {passive:true});
-
-// ═══════════════════════════════════════════
-// OFFLINE DETECTION
-// ═══════════════════════════════════════════
-function showStatus(msg, color) {
-  var el = document.createElement('div');
-  el.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);' +
-    'background:#0d0f14;border:1.5px solid ' + color + ';color:' + color + ';' +
-    'padding:9px 20px;border-radius:20px;font-size:12px;font-family:monospace;' +
-    'z-index:9999;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.5);';
-  el.textContent = msg;
-  document.body.appendChild(el);
-  setTimeout(function() {
-    el.style.transition = 'opacity .4s';
-    el.style.opacity = '0';
-    setTimeout(function(){ el.parentNode && el.parentNode.removeChild(el); }, 400);
-  }, 3500);
-}
-window.addEventListener('offline', function() {
-  showStatus('✈️ Mode avion — Le site fonctionne hors-ligne', '#ffd166');
-});
-window.addEventListener('online', function() {
-  showStatus('✅ Connexion rétablie', '#00d4aa');
-});
-
-// ═══════════════════════════════════════════
-// PWA — Service Worker inline pour le cache
-// ═══════════════════════════════════════════
-(function() {
-  if (!('serviceWorker' in navigator)) return;
-  
-  var swCode = [
-    'const CACHE="credit-master-v5";',
-    'const URL=self.location.href;',
-    'self.addEventListener("install",function(e){',
-    '  e.waitUntil(caches.open(CACHE).then(function(c){return c.add(URL);}));',
-    '  self.skipWaiting();',
-    '});',
-    'self.addEventListener("activate",function(e){',
-    '  e.waitUntil(caches.keys().then(function(ks){',
-    '    return Promise.all(ks.filter(function(k){return k!==CACHE;}).map(function(k){return caches.delete(k);}));',
-    '  }));',
-    '  self.clients.claim();',
-    '});',
-    'self.addEventListener("fetch",function(e){',
-    '  e.respondWith(caches.match(e.request).then(function(r){',
-    '    if(r) return r;',
-    '    return fetch(e.request).then(function(resp){',
-    '      caches.open(CACHE).then(function(c){c.put(e.request,resp.clone());});',
-    '      return resp;',
-    '    }).catch(function(){return caches.match(URL);});',
-    '  }));',
-    '});',
-  ].join('\n');
-
-  try {
-    var blob = new Blob([swCode], {type:'application/javascript'});
-    navigator.serviceWorker.register(URL.createObjectURL(blob))
-      .then(function(){ console.log('Offline cache active'); })
-      .catch(function(e){ console.log('SW (file:// not supported):', e.message); });
-  } catch(e) { console.log('SW blob error:', e.message); }
-  
-  // PWA manifest
-  try {
-    var m = JSON.stringify({
-      name:'Credit Structuring Master',short_name:'CreditPrep',
-      display:'standalone',background_color:'#0a0c10',theme_color:'#00d4aa',
-      description:'Préparation entretien structuration crédit — CA-CIB',
-      icons:[{src:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0c10'/><text y='70' x='50' text-anchor='middle' font-size='60' fill='%2300d4aa'>C</text></svg>",sizes:'any',type:'image/svg+xml'}]
-    });
-    var mblob = new Blob([m],{type:'application/json'});
-    var ml = document.createElement('link');
-    ml.rel='manifest'; ml.href=URL.createObjectURL(mblob);
-    document.head.appendChild(ml);
-  } catch(e){}
-  
-  // Apple PWA
-  [['apple-mobile-web-app-capable','yes'],
-   ['apple-mobile-web-app-status-bar-style','black-translucent'],
-   ['apple-mobile-web-app-title','CreditPrep']
-  ].forEach(function(m){
-    var el=document.createElement('meta');el.name=m[0];el.content=m[1];
-    document.head.appendChild(el);
-  });
-})();
-
-// ═══════════════════════════════════════════
-// KATEX OFFLINE FALLBACK
-// ═══════════════════════════════════════════
-window.addEventListener('load', function() {
-  setTimeout(function() {
-    if (typeof katex !== 'undefined') return; // KaTeX loaded fine
-    // Apply basic fallback styling to formula blocks
-    document.querySelectorAll('.fblock, .formula').forEach(function(el) {
-      el.style.fontFamily = '"IBM Plex Mono",monospace';
-      el.style.color = '#ffd166';
-      el.style.fontSize = '13px';
-      el.style.lineHeight = '1.7';
-      var t = el.innerHTML
-        .replace(/\\boxed\{([^}]*)\}/g,'[$1]')
-        .replace(/\\frac\{([^}]*)\}\{([^}]*)\}/g,'($1)/($2)')
-        .replace(/\\sum(?:_{[^}]*})?(?:\^{[^}]*})?/g,'Σ')
-        .replace(/\\int(?:_{[^}]*})?(?:\^{[^}]*})?/g,'∫')
-        .replace(/\\lambda/g,'λ').replace(/\\rho/g,'ρ')
-        .replace(/\\sigma/g,'σ').replace(/\\mu/g,'μ')
-        .replace(/\\sqrt\{([^}]*)\}/g,'√($1)')
-        .replace(/\\Phi(?:\^{-1})?/g,'Φ')
-        .replace(/\\mathbf\{([^}]*)\}/g,'$1')
-        .replace(/\\text\{([^}]*)\}/g,'$1')
-        .replace(/\\underbrace\{([^}]*)\}_{[^}]*}/g,'$1')
-        .replace(/\\left\(/g,'(').replace(/\\right\)/g,')')
-        .replace(/\\left\[/g,'[').replace(/\\right\]/g,']')
-        .replace(/\\$\\$/g,'').replace(/\\$/g,'')
-        .replace(/\\\[|\\\]/g,'').replace(/\\\(|\\\)/g,'')
-        .replace(/_{([^}]*)}/g,'_$1').replace(/\^{([^}]*)}/g,'^$1');
-      el.innerHTML = t;
-    });
-    console.log('KaTeX fallback applied (offline mode)');
-  }, 2500);
-});
+function mobToggle(){var d=document.getElementById('mob-overlay');d.classList.toggle('open');document.body.style.overflow=d.classList.contains('open')?'hidden':'';}
+function mobOpen(){document.getElementById('mob-overlay').classList.add('open');document.body.style.overflow='hidden';}
+function mobClose(){document.getElementById('mob-overlay').classList.remove('open');document.body.style.overflow='';}
+function mobBg(e){if(e.target===document.getElementById('mob-overlay'))mobClose();}
+function goM(id){if(typeof go==='function')go(id,null);document.querySelectorAll('.mob-item').forEach(function(b){b.classList.toggle('active',b.getAttribute('onclick')==="goM('"+id+"')");});mobClose();}
+// Touch swipe for flashcards
+var _tx=0;
+document.addEventListener('touchstart',function(e){_tx=e.changedTouches[0].screenX;},{passive:true});
+document.addEventListener('touchend',function(e){var dx=_tx-e.changedTouches[0].screenX;if(Math.abs(dx)>50){try{if(dx>0)fc2Next();else fc2Prev();}catch(e){}}},{passive:true});
+// Offline banner
+window.addEventListener('offline',function(){var b=document.createElement('div');b.style.cssText='position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#0d0f14;border:1.5px solid #ffd166;color:#ffd166;padding:8px 18px;border-radius:20px;font-size:12px;font-family:monospace;z-index:9999;';b.textContent='✈️ Mode avion — site 100% hors-ligne';document.body.appendChild(b);setTimeout(function(){b.style.opacity='0';b.style.transition='opacity .4s';setTimeout(function(){b.remove();},400);},4000);});
 </script>
+<script>
+function updateCarry() {
+  var N = +document.getElementById('cy-n').value;
+  var s = +document.getElementById('cy-s').value;
+  var f = +document.getElementById('cy-f').value;
+  var p = +document.getElementById('cy-p').value;
+  var R = +document.getElementById('cy-r').value / 100;
+  var el;
+  el=document.getElementById('cy-n-v'); if(el) el.textContent=N;
+  el=document.getElementById('cy-s-v'); if(el) el.textContent=s;
+  el=document.getElementById('cy-f-v'); if(el) el.textContent=f.toFixed(2)+'%';
+  el=document.getElementById('cy-p-v'); if(el) el.textContent=p;
+  el=document.getElementById('cy-r-v'); if(el) el.textContent=(R*100).toFixed(0)+'%';
 
+  var Nm = N * 1e6;
+  var carryBrut  = s / 10000 * Nm;            // Annual gross carry (short CDS)
+  var carryBond  = (s/10000 - f/100) * Nm;    // Bond carry net of funding
+  var rolldown   = p / 10000 * Nm;            // Roll-down annual
+  var carryTotal = carryBrut + rolldown;       // CDS total carry
+  var jtd        = Nm * (1 - R);              // JTD if default
+  var lambda     = s / 10000 / (1 - R);       // Hazard rate
+  var breakevenMonths = jtd / (carryBrut/12); // Months of carry to cover 1 default
+
+  var results = document.getElementById('carry-results');
+  if (results) results.innerHTML = [
+    {label:'Carry CDS brut (vend prot.)',  val:'+'+Math.round(carryBrut/1000)+'K€/an', col:'var(--acc)', sub:'= '+s+'bps × '+N+'M€'},
+    {label:'Roll-down annuel',              val:(p>=0?'+':'')+Math.round(rolldown/1000)+'K€/an', col:'#4f9cff', sub:'= '+p+'bps/an pente × '+N+'M€'},
+    {label:'Carry total CDS',              val:'+'+Math.round(carryTotal/1000)+'K€/an', col:'var(--acc)', sub:'carry + roll-down'},
+    {label:'Carry bond net funding',       val:(carryBond>=0?'+':'')+Math.round(carryBond/1000)+'K€/an', col:carryBond>=0?'var(--acc)':'var(--acc3)', sub:'coupon '+s+'bps − funding '+(f*100).toFixed(0)+'bps'},
+    {label:'JTD si défaut',               val:'-'+Math.round(jtd/1e6*10)/10+'M€', col:'var(--acc3)', sub:'= N×(1-R) = '+N+'M × '+(1-R)*100+'%'},
+    {label:'Mois carry pour couvrir JTD', val:Math.round(breakevenMonths)+'M', col:'var(--acc4)', sub:'carry CDS vs perte max'},
+  ].map(function(r) {
+    return '<div style="background:var(--s1);border:1px solid var(--bd);border-radius:8px;padding:12px">' +
+      '<div style="font-size:11px;color:var(--t3);margin-bottom:4px">'+r.label+'</div>' +
+      '<div style="font-size:18px;font-weight:700;font-family:var(--mono);color:'+r.col+'">'+r.val+'</div>' +
+      '<div style="font-size:10px;color:var(--t3);margin-top:2px">'+r.sub+'</div></div>';
+  }).join('');
+
+  var summary = document.getElementById('carry-summary');
+  if (summary) summary.innerHTML =
+    '<strong style="color:var(--t1)">Analyse : position short CDS '+N+'M€ à '+s+'bps</strong><br/>' +
+    '• Vous recevez <strong style="color:var(--acc)">'+Math.round(carryBrut/1000)+'K€/an</strong> de carry brut ('+Math.round(s/365*100)/100+'bps/jour).<br/>' +
+    '• Avec un roll-down de '+p+'bps/an, le carry total est <strong style="color:var(--acc)">'+Math.round(carryTotal/1000)+'K€/an</strong>.<br/>' +
+    '• En cas de défaut, vous perdez <strong style="color:var(--acc3)">'+Math.round(jtd/1e6*10)/10+'M€</strong> (JTD = N×LGD).<br/>' +
+    '• Il vous faut <strong style="color:var(--acc4)">'+Math.round(breakevenMonths)+' mois</strong> de carry pour récupérer une perte de défaut → un défaut avant '+Math.round(breakevenMonths)+' mois = perte nette.<br/>' +
+    '• Probabilité annuelle de défaut implicite : <strong>λ = '+(lambda*100).toFixed(2)+'%/an</strong> (= s/(1-R)).';
+}
+</script>
 </html>
